@@ -42,3 +42,45 @@
     <br />
     <button type="submit" onclick="validate_form()">Submit</button>
 </form>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    function isNumeric(value) {
+        return /^-?\d+$/.test(value);
+    }
+    const validate_form = () => {
+        let names = ["name", "email", "telephone", "gender", "password"];
+        names.forEach(function (element) {
+                    document.getElementById(element + "_error").textContent = "";
+        });
+        let errorCount = 0;
+        names.forEach(function (element) {
+            if (element === "telephone") {
+                let val = document.forms["register_form"][element].value;
+                if(!isNumeric(val)){
+                    document.getElementById(element + "_error").textContent = element.toUpperCase().replace("_", " ") + " must be in number"; ++errorCount
+                }
+                if(val.length !== 10){
+                    document.getElementById(element + "_error").textContent = element.toUpperCase().replace("_", " ") + " must be 10 digit"; ++errorCount
+                }
+            }else if(element === "password"){
+                let val = document.forms["register_form"][element].value;
+                if(val.length <= 8){
+                    document.getElementById(element + "_error").textContent = element.toUpperCase().replace("_", " ") + " must be greater than 8 characters"; ++errorCount
+                }
+            } else {
+                let val = document.forms["register_form"][element].value;
+                if (val === null || val === "") {
+                    document.getElementById(element + "_error").textContent =
+                        element.toUpperCase().replace("_", " ") + " must be filled out";
+                        ++errorCount;
+                }
+            }
+        });
+        if(errorCount){
+            return false
+        }else{
+            swal("Submitted SuccessFully!", "Your form successfully submitted!", "success")
+            document.forms["register_form"].reset();
+        }
+    };
+</script>
