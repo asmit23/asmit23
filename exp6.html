@@ -2,26 +2,26 @@
     <label for="name">Full Name</label>
      <body background="https://img.freepik.com/free-photo/grunge-paint-background_1409-1337.jpg?w=2000">
     <br />
-    <input type="text" id="name" placeholder="Full Name" autocomplete="off" />
+    <input type="text" id="name" placeholder="Name" autocomplete="off" />
     <br />
     <span class="error">
         <p id="name_error"></p>
     </span>
     <br />
-    <label for="email">Email :</label>
+    <label for="email address">Email address :</label>
     <br />
-    <input type="email" id="email" placeholder="Email" autocomplete="off" />
+    <input type="email address" id="email address" placeholder="Email address" autocomplete="off" />
     <br />
     <span class="error">
-        <p id="email_error"></p>
+        <p id="email address_error"></p>
     </span>
     <br />
-    <label for="telephone">Telephone/Mobile :</label>
+    <label for="telephone no.">Mobile :</label>
     <br />
-    <input type="tel" id="telephone" placeholder="Telephone/Mobile" autocomplete="off" />
+    <input type="tel" id="telephone no." placeholder="Mobile" autocomplete="off" />
     <br />
     <span class="error">
-        <p id="telephone_error"></p>
+        <p id="telephone no._error"></p>
     </span>
     <br />
     <label for="gender">Gender :</label>
@@ -49,13 +49,13 @@
         return /^-?\d+$/.test(value);
     }
     const validate_form = () => {
-        let names = ["name", "email", "telephone", "gender", "password"];
+        let names = ["name", "email address", "telephone no.", "gender", "password"];
         names.forEach(function (element) {
                     document.getElementById(element + "_error").textContent = "";
         });
         let errorCount = 0;
         names.forEach(function (element) {
-            if (element === "telephone") {
+            if (element === "telephone no.") {
                 let val = document.forms["register_form"][element].value;
                 if(!isNumeric(val)){
                     document.getElementById(element + "_error").textContent = element.toUpperCase().replace("_", " ") + " must be in number"; ++errorCount
