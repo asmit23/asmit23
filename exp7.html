@@ -1,25 +1,34 @@
-<body background="https://img.freepik.com/free-photo/hand-painted-watercolor-background-with-sky-clouds-shape_24972-1095.jpg?w=2000">
-<section>
-    <button type="button" onclick="change_bg()">Change Background </button>
-    <button type="button" onclick="change_font_size()">Change Font Size</button>
-    <button type="button" onclick="change_font_color()">Change Color</button>
-    <button type="button" onclick="change_align_center()">Align Text</button>
-    
-</section>
-<script>
-    const change_bg = () => {
-        document.getElementById('main').style.backgroundColor = "#2d2d2d"
-    }
-    const change_font_size = () => {
-        document.getElementById('main').style.fontSize = "30px"
-    }
-    const change_font_color = () => {
-        document.querySelectorAll("button").forEach(button => button.style.color = "#b5e853");
-    }
-    const change_align_center = () => {
-        document.getElementById('main').style.textAlign = "center"
-    }
-    
-   
-    
-</script>
+<html>
+<head>
+    <title>Using CSS </title>
+    <style>
+        ul {
+            color: darkblue;
+            background-color: azure;
+            font-family: 'Lucida Sans';
+            font-style: italic;
+            text-align: left;
+            border-radius: 10%;
+            border-style: dotted;
+        }
+        a {
+            text-decoration: none;
+        }
+        body {
+            background-color: antiquewhite;
+        }
+    </style>
+    <body>
+        <h3 align="center"> Program  made using CSS properties:<br></h3>
+        <ul align="left">
+            <li>Background</li>
+            <li>Font Type, Face and Color</li>
+            <li>Aligning Text</li>
+            <li>Removing Underlines from Hyperlinks</li>
+        </ul>
+        </a>
+    </body>
+</head>
+</html>
+
+
