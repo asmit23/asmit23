@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body class="line-numbers">
+    <header>
+      <div class="container">
+      </div>
+    </header>
+    <div class="container">
+      <section>
+        <h1>linear search</h1>
+        <pre><code class="language-python">def linearsearch(arr, x):
+    for i in range(len(arr)):
+        if arr[i] == x:
+            return i
+    return -1
+arr = [&#39;t&#39;,&#39;u&#39;,&#39;t&#39;,&#39;o&#39;,&#39;r&#39;,&#39;i&#39;,&#39;a&#39;,&#39;l&#39;]
+x = &#39;a&#39;
+print(&quot;element found at index &quot;+str(linearsearch(arr,x)))</code>
+        </pre>
+        <h1>binary search</h1>
+        <pre><code class="language-python">def binarySearch(array, x, low, high):
+    while low &lt;= high:
+        mid = low + (high - low)//2
+        if array[mid] == x:
+            return mid
+        elif array[mid] &lt; x:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+
+array = [3, 4, 5, 6, 7, 8, 9]
+x = 4
+
+result = binarySearch(array, x, 0, len(array)-1)
+if result != -1:
+    print(&quot;Element is present at index &quot; + str(result))
+else:
+    print(&quot;Not found&quot;)</code>
+        </pre>
+        <h1>selection sort</h1>
+        <pre><code class="language-python">def selectionSort( itemsList ):
+    n = len( itemsList )
+    for i in range( n - 1 ): 
+        minValueIndex = i
+        for j in range( i + 1, n ):
+            if itemsList[j] &lt; itemsList[minValueIndex] :
+                minValueIndex = j
+        if minValueIndex != i :
+            temp = itemsList[i]
+            itemsList[i] = itemsList[minValueIndex]
+            itemsList[minValueIndex] = temp
+    return itemsList
+
+el = [21,6,9,33,3]
+print(selectionSort(el))</code>
+        </pre>
+        <h1>bubble sort</h1>
+        <pre><code class="language-python">def bubbleSort( theSeq ):
+    n = len( theSeq )
+    for i in range( n - 1 ) :
+        flag = 0
+        for j in range(n - 1) :
+            if theSeq[j] > theSeq[j + 1] : 
+                tmp = theSeq[j]
+                theSeq[j] = theSeq[j + 1]
+                theSeq[j + 1] = tmp
+                flag = 1
+        if flag == 0:
+            break
+    return theSeq
+
+el = [21,6,9,33,3] 
+result = bubbleSort(el)
+print (result)</code>
+        </pre>
+        <h1>insertion sort</h1>
+        <pre><code class="language-python">def insertionSort(arr):
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i-1
+        while j &gt;=0 and key &lt; arr[j] :
+            arr[j+1] = arr[j]
+            j -= 1
+        arr[j+1] = key
+arr = [&#39;h&#39;,&#39;e&#39;,&#39;l&#39;,&#39;l&#39;,&#39;o&#39;]
+insertionSort(arr)
+print (&quot;The sorted array is:&quot;)
+for i in range(len(arr)):
+    print (arr[i])</code>
+        </pre>
+        <h1>fibonacci algorithm</h1>
+        <pre><code class="language-python">def Fibonacci(n):
+    if n&lt;= 0:
+        print(&quot;Incorrect input&quot;)
+    elif n == 1:
+        return 0
+    elif n == 2:
+        return 1
+    else:
+        return Fibonacci(n-1)+Fibonacci(n-2)
+print(Fibonacci(10))</code>
+        </pre>
+      </section>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/assets/js/prism.js"></script>
+  </body>
+</html>
