@@ -1,0 +1,45 @@
+<html>
+<head>
+<style>
+body {background-image:url("pattern7.jpg"); color:rgb(255, 255, 255);}
+textarea {border: lightblue solid 5px;}
+input {border: lightblue solid 5px;}
+button {font-size:15px; font-weight: bold; border: lightblue solid 5px; background-color:white; padding:10px; border- 
+radius:15px; }
+</style>
+</head>
+<body>
+<section>
+    <textarea placeholder="Enter Text" id="user_text" cols="50" rows="5" style="margin-left:20px;"></textarea>
+    <br><br>
+    <input type="text" placeholder=" Search..."  id="search" style="width: 307px; margin-left: 20px;">
+    <br><br>
+    <button type="submit" onclick="handle_search()" style="margin-left:20px;">Search</button><br><br>
+    <span style="color: red; font-size:25; font-weight:bold;" id="output"></span>
+</section>
+<script>
+    let user_text = document.getElementById('user_text')
+    let search_query = document.getElementById('search')
+    let output = document.getElementById('output')
+    function handle_search () 
+        {
+        if(user_text.value.length > 0 && search_query.value.length > 0)
+           {
+            let regex_query = new RegExp(search_query.value, "ig");
+            if(regex_query.test(user_text.value)) 
+           {
+                output.innerHTML = "Text Exist"
+            }
+           else
+            {
+                output.innerHTML = "Text does not Exist"
+            }
+        } 
+       else
+       {
+            return false
+        }
+    }
+</script>
+</body>
+</html>
